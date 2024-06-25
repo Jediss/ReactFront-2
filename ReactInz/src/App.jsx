@@ -1,29 +1,33 @@
 import React, { useState } from 'react'
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Sidebar from './components/Sidebar'
-import Topbar from './components/Topbar'
-import MainContent from './components/MainContent'
+import MainLayout from './layouts/MainLayout';
+import HomePage from './pages/HomePage';
+import Magazyn from './pages/Magazyn';
+import Towary from './pages/Towary';
+import Zadania from './pages/Zadania';
+import Zamowienia from './pages/Zamowienia';
+import NotFoundPage from './pages/NotFoundPage';
+
+const router = createBrowserRouter(
+  createRoutesFromElements
+  (
+    <Route path="/" element={<MainLayout />}>
+      <Route index element={<HomePage />}/>
+      <Route path="/Magazyn" element={<Magazyn />}/>
+      <Route path="/Towary" element={<Towary />}/>
+      <Route path="/Zadania" element={<Zadania />}/>
+      <Route path="/Zamowienia" element={<Zamowienia />}/>
+      <Route path="*" element={<NotFoundPage />}/>
+    </Route>
+  )
+)
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div id="page-top">
-      <div id="wrapper">    
-        
-        <Sidebar/>
-        
-        {/* Content Wrapper */}
-        <div id="content-wrapper" className="d-flex flex-column">
-          
-          {/* Main Content */}
-            <div id="content">
-              <Topbar/>
-              <MainContent/>
-            </div>
-         </div>
-      </div>
-    </div>
+    <RouterProvider router = {router} />
   );
 }
 

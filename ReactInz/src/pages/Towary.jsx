@@ -2,7 +2,7 @@ import React from 'react'
 
 const Towary = () => {
   return (
-    <div>
+    <div className="container-fluid">
             {/* Begin Page Content */}
             <div className="container-fluid">
             
