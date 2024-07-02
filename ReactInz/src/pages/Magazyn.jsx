@@ -17,7 +17,7 @@ function ModalDodajProdukt(props) {
   
   async function fetchDataJednostka() {
       try {
-        const response = await fetch('http://localhost:8080/jednostka/all');
+        const response = await fetch('/api/jednostka/all');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -34,7 +34,7 @@ function ModalDodajProdukt(props) {
 
     async function fetchDataRodzajSkladowania() {
       try {
-        const response = await fetch('http://localhost:8080/rodzajSkladowania/all');
+        const response = await fetch('/api/rodzajSkladowania/all');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

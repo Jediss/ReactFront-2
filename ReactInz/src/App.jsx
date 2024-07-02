@@ -8,19 +8,24 @@ import Towary from './pages/Towary';
 import Zadania from './pages/Zadania';
 import Zamowienia from './pages/Zamowienia';
 import NotFoundPage from './pages/NotFoundPage';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 
 const router = createBrowserRouter(
   createRoutesFromElements
   (
-    <Route path="/" element={<MainLayout />}>
-      <Route index element={<HomePage />}/>
-      <Route path="/Magazyn" element={<Magazyn />}/>
-      <Route path="/Towary" element={<Towary />}/>
-      <Route path="/Zadania" element={<Zadania />}/>
-      <Route path="/Zamowienia" element={<Zamowienia />}/>
-      <Route path="*" element={<NotFoundPage />}/>
-    </Route>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<HomePage />}/>
+        <Route path="/Magazyn" element={<Magazyn />}/>
+        <Route path="/Towary" element={<Towary />}/>
+        <Route path="/Zadania" element={<Zadania />}/>
+        <Route path="/Zamowienia" element={<Zamowienia />}/>
+        <Route path="*" element={<NotFoundPage />}/>
+        <Route path="/Login" element={<Login />}/>
+      <Route path="/Register" element={<Register />}/>
+      </Route>
+
   )
 )
 
